@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - UserInterface", "0 - UserInterface", "{BC0B37CD-D12F-4768-8123-60869BA901E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{ADCDD2E4-D723-447A-907B-9BC2A35BBC84}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Core", "2 - Core", "{C079ED76-F1F2-4B9D-AE19-5DBD28FC3D33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infraestructure", "3 - Infraestructure", "{182CA8D9-E4BE-4E2E-B000-EF09E864B3AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{6B292E12-AFC9-4707-82A7-5DC124666F93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rest", "Rest", "{05D72E50-D93F-4C4A-AE31-9EDD83D66ECD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSchedule.UserInterface.API.Rest", "EventSchedule.UserInterface.API.Rest\EventSchedule.UserInterface.API.Rest.csproj", "{70375B30-FDEB-4F17-8679-F35BE46D5A28}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSchedule.Core", "EventSchedule.Core\EventSchedule.Core.csproj", "{5590A7CF-46B2-4ADA-8D25-F1653A7D2E1D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - CrossCutting", "4.1 - CrossCutting", "{FFFA788B-3522-4FC3-8909-0CE331CAC08C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", "{244C2C9F-56A4-4FA3-9865-FC8E1C396A1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSchedule.Infraestructure.Data", "EventSchedule.Infraestructure.Data\EventSchedule.Infraestructure.Data.csproj", "{1E497543-D527-4149-BE1A-69BFFAEFDEA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSchedule.Application", "EventSchedule.Application\EventSchedule.Application.csproj", "{7FD65323-273E-4F3E-9E9F-529FEA2AE626}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70375B30-FDEB-4F17-8679-F35BE46D5A28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70375B30-FDEB-4F17-8679-F35BE46D5A28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70375B30-FDEB-4F17-8679-F35BE46D5A28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70375B30-FDEB-4F17-8679-F35BE46D5A28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5590A7CF-46B2-4ADA-8D25-F1653A7D2E1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5590A7CF-46B2-4ADA-8D25-F1653A7D2E1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5590A7CF-46B2-4ADA-8D25-F1653A7D2E1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5590A7CF-46B2-4ADA-8D25-F1653A7D2E1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E497543-D527-4149-BE1A-69BFFAEFDEA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E497543-D527-4149-BE1A-69BFFAEFDEA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E497543-D527-4149-BE1A-69BFFAEFDEA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E497543-D527-4149-BE1A-69BFFAEFDEA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FD65323-273E-4F3E-9E9F-529FEA2AE626}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FD65323-273E-4F3E-9E9F-529FEA2AE626}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FD65323-273E-4F3E-9E9F-529FEA2AE626}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FD65323-273E-4F3E-9E9F-529FEA2AE626}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6B292E12-AFC9-4707-82A7-5DC124666F93} = {BC0B37CD-D12F-4768-8123-60869BA901E2}
+		{05D72E50-D93F-4C4A-AE31-9EDD83D66ECD} = {6B292E12-AFC9-4707-82A7-5DC124666F93}
+		{70375B30-FDEB-4F17-8679-F35BE46D5A28} = {05D72E50-D93F-4C4A-AE31-9EDD83D66ECD}
+		{5590A7CF-46B2-4ADA-8D25-F1653A7D2E1D} = {C079ED76-F1F2-4B9D-AE19-5DBD28FC3D33}
+		{FFFA788B-3522-4FC3-8909-0CE331CAC08C} = {182CA8D9-E4BE-4E2E-B000-EF09E864B3AE}
+		{244C2C9F-56A4-4FA3-9865-FC8E1C396A1C} = {182CA8D9-E4BE-4E2E-B000-EF09E864B3AE}
+		{1E497543-D527-4149-BE1A-69BFFAEFDEA2} = {244C2C9F-56A4-4FA3-9865-FC8E1C396A1C}
+		{7FD65323-273E-4F3E-9E9F-529FEA2AE626} = {ADCDD2E4-D723-447A-907B-9BC2A35BBC84}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7CB7E57B-7C62-46C4-9C40-53841727B7C1}
+	EndGlobalSection
+EndGlobal
