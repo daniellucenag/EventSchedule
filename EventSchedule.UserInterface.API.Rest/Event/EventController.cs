@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using AutoMapper;
 using EventSchedule.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -11,47 +12,42 @@ namespace EventSchedule.UserInterface.API.Rest.Event
     {
         private readonly IEventAppService _eventApp;
         private readonly IMapper _mapper;
+
         public EventController(IMapper mapper, IEventAppService eventApp)
         {
             _mapper = mapper;
             _eventApp = eventApp;
         }
-               
+
         [HttpGet]
         public IEnumerable<EventViewModel> Get()
         {
-            var _event = _mapper.Map<IEnumerable<Core.Entities.Event>, 
-                IEnumerable<EventViewModel>>(_eventApp.GetAll());
-            return _event;
+            return _mapper.Map<IEnumerable<Core.Entities.Event>, IEnumerable<EventViewModel>>(_eventApp.GetAll());
         }
 
         [HttpGet("{id}")]
         public ActionResult<EventViewModel> Get(int id)
         {
-            var _event = _mapper.Map<Core.Entities.Event, EventViewModel>(_eventApp.GetById(id));
-            return _event;
+            return _mapper.Map<Core.Entities.Event, EventViewModel>(_eventApp.GetById(id));
         }
 
         [HttpPost]
-        public void Post([FromBody] EventViewModel eventSchedule)
+        public async Task Post([FromBody] EventViewModel eventSchedule)
         {
-            var _event = _mapper.Map<EventViewModel, Core.Entities.Event>(eventSchedule);
-            _eventApp.Add(_event);
+            await _eventApp.Add(_mapper.Map<EventViewModel, Core.Entities.Event>(eventSchedule));
         }
 
         [HttpPut("{id}")]
-        public void Put(int id,[FromBody] EventViewModel eventSchedule)
+        public async Task Put(int id,[FromBody] EventViewModel eventSchedule)
         {
-            var _event = _mapper.Map<EventViewModel, Core.Entities.Event>(eventSchedule);
-            _eventApp.Update(_event);
+           await _eventApp.Update(_mapper.Map<EventViewModel, Core.Entities.Event>(eventSchedule));
         }
 
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public void Delete(int id, [FromBody] EventViewModel eventSchedule)
+        public async Task Delete(int id, [FromBody] EventViewModel eventSchedule)
         {
-            var _event = _mapper.Map<EventViewModel, Core.Entities.Event>(eventSchedule);
-            _eventApp.Remove(_event);
+            await _eventApp.Remove(_mapper.Map<EventViewModel, Core.Entities.Event>(eventSchedule));
         }
     }
 }
