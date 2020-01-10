@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace EventSchedule.UserInterface.API.Rest
 {
@@ -27,10 +28,27 @@ namespace EventSchedule.UserInterface.API.Rest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            
+
+            services.AddSwaggerGen(swagger =>
+            {
+                swagger.SwaggerDoc("v1", new Info
+                {
+                    Title = "ClientSchedule Rest API",
+                    Version = "v1",
+                    Description = "Swagger Rest API for ClientSchedule Project",
+                    TermsOfService = "None",
+                    Contact = new Contact
+                    {
+                        Name = "Daniel Lucena",
+                        Email = "daniellucenag@gmail.com",
+                        Url = "https://twitter.com/daniellucena"
+                    }
+                });
+            });
+
             //Map for MVVM
             services.AddAutoMapper(typeof(EventProfile));
-            
+
             //Dependency injection of the services, repository and application
             services.AddScoped(typeof(IAppServiceBase<>), typeof(AppServiceBase<>));
             services.AddScoped(typeof(IEventAppService), typeof(EventAppService));
@@ -57,6 +75,9 @@ namespace EventSchedule.UserInterface.API.Rest
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c => { c.SwaggerEndpoint("../swagger/v1/swagger.json", "EventSchedule Rest API"); });
         }
     }
 }

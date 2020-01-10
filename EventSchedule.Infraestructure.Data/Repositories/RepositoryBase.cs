@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using EventSchedule.Core.Interfaces.Repositories;
 using EventSchedule.Infraestructure.Data.Context;
 
@@ -11,10 +12,10 @@ namespace EventSchedule.Infraestructure.Data.Repositories
     {
         protected EventScheduleContext Db = new EventScheduleContext();
 
-        public void Add(TEntity obj)
+        public async Task Add(TEntity obj)
         {
             Db.Set<TEntity>().Add(obj);
-            Db.SaveChanges();
+            await Db.SaveChangesAsync();
         }
 
         public IEnumerable<TEntity> GetAll()
@@ -24,19 +25,19 @@ namespace EventSchedule.Infraestructure.Data.Repositories
 
         public TEntity GetById(int id)
         {
-            return  Db.Set<TEntity>().Find(id);           
+            return Db.Set<TEntity>().Find(id);
         }
 
-        public void Remove(TEntity obj)
+        public async Task Remove(TEntity obj)
         {
             Db.Set<TEntity>().Remove(obj);
-            Db.SaveChanges();
+            await Db.SaveChangesAsync();
         }
 
-        public void Update(TEntity obj)
+        public async Task Update(TEntity obj)
         {
             Db.Entry(obj).State = EntityState.Modified;
-            Db.SaveChanges();
+            await Db.SaveChangesAsync();
         }
 
         public void Dispose()

@@ -2,6 +2,7 @@
 using EventSchedule.Application.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using EventSchedule.Core.Interfaces.Services;
 
 namespace EventSchedule.Application
@@ -14,9 +15,9 @@ namespace EventSchedule.Application
             _serviceBase = serviceBase;
         }
 
-        public void Add(TEntity obj)
+        public async Task Add(TEntity obj)
         {
-            _serviceBase.Add(obj);
+            await _serviceBase.Add(obj);
         }
 
         public TEntity GetById(int id)
@@ -29,14 +30,14 @@ namespace EventSchedule.Application
             return _serviceBase.GetAll();
         }
 
-        public void Update(TEntity obj)
+        public async Task Update(TEntity obj)
         {
-            _serviceBase.Update(obj);
+            await _serviceBase.Update(obj);
         }
 
-        public void Remove(TEntity obj)
+        public async Task Remove(TEntity obj)
         {
-            _serviceBase.Remove(obj);
+            await _serviceBase.Remove(obj);
         }
 
         public void Dispose()

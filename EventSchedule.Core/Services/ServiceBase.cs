@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using EventSchedule.Core.Interfaces.Repositories;
 using EventSchedule.Core.Interfaces.Services;
 
@@ -13,9 +14,9 @@ namespace EventSchedule.Core.Services
             _repository = repository;
         }
 
-        public void Add(TEntity obj)
+        public async Task Add(TEntity obj)
         {
-            _repository.Add(obj);
+            await _repository.Add(obj);
         }
 
         public TEntity GetById(int id)
@@ -28,14 +29,14 @@ namespace EventSchedule.Core.Services
             return _repository.GetAll();
         }
 
-        public void Update(TEntity obj)
+        public async Task Update(TEntity obj)
         {
-            _repository.Update(obj);
+            await _repository.Update(obj);
         }
 
-        public void Remove(TEntity obj)
+        public async Task Remove(TEntity obj)
         {
-            _repository.Remove(obj);
+            await _repository.Remove(obj);
         }
 
         public void Dispose()
