@@ -38,7 +38,7 @@ namespace EventSchedule.UserInterface.API.Rest.Event
         }
 
         [HttpPut("{id}")]
-        public async Task Put(int id,[FromBody] EventViewModel eventSchedule)
+        public async Task Put(int id, [FromBody] EventViewModel eventSchedule)
         {
            await _eventApp.Update(_mapper.Map<EventViewModel, Core.Entities.Event>(eventSchedule));
         }
