@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using EventSchedule.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -38,5 +40,27 @@ namespace EventSchedule.Infraestructure.Data.Context
 
             return base.SaveChanges();
         }
+
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            foreach (var entry in this.ChangeTracker.Entries()
+                .Where(entry => entry.Entity.GetType().GetProperty("CreatedAt") != null))
+            {
+                if (entry.State == EntityState.Added)
+                {
+                    entry.Property("CreatedAt").CurrentValue = DateTime.Now;
+                }
+
+                if (entry.State == EntityState.Modified)
+                {
+                    entry.Property("CreatedAt").IsModified = false;
+                }
+
+            }
+            int result = await base.SaveChangesAsync();           
+            return result;
+        }
     }
+
+
 }

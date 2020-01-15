@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using EventSchedule.Core.Interfaces.Repositories;
 using EventSchedule.Core.Interfaces.Services;
+using EventSchedule.Core.Interfaces.UnitOfWork;
 
 namespace EventSchedule.Core.Services
 {
     public class ServiceBase<TEntity> : IDisposable, IServiceBase<TEntity> where TEntity : class
     {
         private readonly IRepositoryBase<TEntity> _repository;
-        public ServiceBase(IRepositoryBase<TEntity> repository)
+        private readonly IUnitOfWork _unitOfWork;
+        public ServiceBase(IRepositoryBase<TEntity> repository, IUnitOfWork unitOfWork)
         {
             _repository = repository;
+            _unitOfWork = unitOfWork;
         }
 
-        public async Task Add(TEntity obj)
+        public void Add(TEntity obj)
         {
-            await _repository.Add(obj);
+            _repository.Add(obj);
+            _unitOfWork.SaveChangesAsync();
         }
 
         public TEntity GetById(int id)
@@ -29,14 +33,15 @@ namespace EventSchedule.Core.Services
             return _repository.GetAll();
         }
 
-        public async Task Update(TEntity obj)
+        public void Update(TEntity obj)
         {
-            await _repository.Update(obj);
+            _repository.Update(obj);
+            _unitOfWork.SaveChangesAsync();
         }
 
-        public async Task Remove(TEntity obj)
+        public void Remove(TEntity obj)
         {
-            await _repository.Remove(obj);
+            _repository.Remove(obj);
         }
 
         public void Dispose()

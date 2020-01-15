@@ -15,9 +15,9 @@ namespace EventSchedule.Application
             _serviceBase = serviceBase;
         }
 
-        public async Task Add(TEntity obj)
+        public void Add(TEntity obj)
         {
-            await _serviceBase.Add(obj);
+            _serviceBase.Add(obj);
         }
 
         public TEntity GetById(int id)
@@ -30,19 +30,19 @@ namespace EventSchedule.Application
             return _serviceBase.GetAll();
         }
 
-        public async Task Update(TEntity obj)
+        public void Update(TEntity obj)
         {
-            await _serviceBase.Update(obj);
+            _serviceBase.Update(obj);
         }
 
-        public async Task Remove(TEntity obj)
+        public void Remove(TEntity obj)
         {
-            await _serviceBase.Remove(obj);
+            _serviceBase.Remove(obj);
         }
 
         public void Dispose()
         {
             _serviceBase.Dispose();
-        }
+        }      
     }
 }

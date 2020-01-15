@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 using AutoMapper;
 using EventSchedule.Application.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -32,22 +31,21 @@ namespace EventSchedule.UserInterface.API.Rest.Event
         }
 
         [HttpPost]
-        public async Task Post([FromBody] EventViewModel eventSchedule)
+        public void Post([FromBody] EventViewModel eventSchedule)
         {
-            await _eventApp.Add(_mapper.Map<EventViewModel, Core.Entities.Event>(eventSchedule));
+            _eventApp.Add(_mapper.Map<EventViewModel, Core.Entities.Event>(eventSchedule));
         }
 
         [HttpPut("{id}")]
-        public async Task Put(int id, [FromBody] EventViewModel eventSchedule)
+        public void Put(int id, [FromBody] EventViewModel eventSchedule)
         {
-           await _eventApp.Update(_mapper.Map<EventViewModel, Core.Entities.Event>(eventSchedule));
+           _eventApp.Update(_mapper.Map<EventViewModel, Core.Entities.Event>(eventSchedule));
         }
 
-        // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
-        public async Task Delete(int id, [FromBody] EventViewModel eventSchedule)
+        public void Delete(int id, [FromBody] EventViewModel eventSchedule)
         {
-            await _eventApp.Remove(_mapper.Map<EventViewModel, Core.Entities.Event>(eventSchedule));
+            _eventApp.Remove(_mapper.Map<EventViewModel, Core.Entities.Event>(eventSchedule));
         }
     }
 }

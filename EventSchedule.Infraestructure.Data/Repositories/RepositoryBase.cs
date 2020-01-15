@@ -10,39 +10,45 @@ namespace EventSchedule.Infraestructure.Data.Repositories
 {
     public class RepositoryBase<TEntity> : IDisposable, IRepositoryBase<TEntity> where TEntity : class
     {
-        protected EventScheduleContext Db = new EventScheduleContext();
+        protected readonly EventScheduleContext Db;
+        protected readonly DbSet<TEntity> DbSet;
 
-        public async Task Add(TEntity obj)
+        public RepositoryBase(EventScheduleContext context)
         {
-            Db.Set<TEntity>().Add(obj);
-            await Db.SaveChangesAsync();
+            Db = context;
+            DbSet = Db.Set<TEntity>();
+        }
+
+        //public EventScheduleContext Db = new EventScheduleContext();
+
+        public void Add(TEntity obj)
+        {
+            DbSet.Add(obj);
         }
 
         public IEnumerable<TEntity> GetAll()
         {
-            return Db.Set<TEntity>().ToList();
+            return DbSet.ToList();
         }
 
         public TEntity GetById(int id)
         {
-            return Db.Set<TEntity>().Find(id);
+            return DbSet.Find(id);
         }
 
-        public async Task Remove(TEntity obj)
+        public void Remove(TEntity obj)
         {
-            Db.Set<TEntity>().Remove(obj);
-            await Db.SaveChangesAsync();
+            DbSet.Remove(obj);
         }
 
-        public async Task Update(TEntity obj)
+        public void Update(TEntity obj)
         {
             Db.Entry(obj).State = EntityState.Modified;
-            await Db.SaveChangesAsync();
         }
 
         public void Dispose()
         {
             Db.Dispose();
-        }
+        }        
     }
 }

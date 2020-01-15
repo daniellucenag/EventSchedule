@@ -3,8 +3,11 @@ using EventSchedule.Application;
 using EventSchedule.Application.Interfaces;
 using EventSchedule.Core.Interfaces.Repositories;
 using EventSchedule.Core.Interfaces.Services;
+using EventSchedule.Core.Interfaces.UnitOfWork;
 using EventSchedule.Core.Services;
+using EventSchedule.Infraestructure.Data.Context;
 using EventSchedule.Infraestructure.Data.Repositories;
+using EventSchedule.Infraestructure.Data.UnitOfWork;
 using EventSchedule.UserInterface.API.Rest.Event;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -58,6 +61,9 @@ namespace EventSchedule.UserInterface.API.Rest
 
             services.AddScoped(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
             services.AddScoped(typeof(IEventRepository), typeof(EventRepository));
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<EventScheduleContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
