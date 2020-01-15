@@ -5,11 +5,11 @@ namespace EventSchedule.Core.Interfaces.Repositories
 {
     public interface IRepositoryBase<TEntity> where TEntity : class
     {
-        Task Add(TEntity obj);
+        void Add(TEntity obj);
         TEntity GetById(int id);
         IEnumerable<TEntity> GetAll();
-        Task Update(TEntity obj);
-        Task Remove(TEntity obj);
+        void Update(TEntity obj);
+        void Remove(TEntity obj);
         void Dispose();
     }
 }
