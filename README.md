@@ -1,8 +1,11 @@
 # EventSchedule
-EventSchedule Project
 
-Project to test hexagonal architecture
+Test hexagonal architecture
 
-This project is based on https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/
+This project is based on
 
-Trying to understand better this architecture concept.
+ * https://herbertograca.com/2017/11/16/explicit-architecture-01-ddd-hexagonal-onion-clean-cqrs-how-i-put-it-all-together/
+ * https://www.youtube.com/watch?v=i9Il79a2uBU
+ * https://www.eduardopires.net.br/2014/10/tutorial-asp-net-mvc-5-ddd-ef-automapper-ioc-dicas-e-truques/
+
+Just me trying to understand better this architecture concept.
