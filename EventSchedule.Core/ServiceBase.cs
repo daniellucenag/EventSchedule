@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using EventSchedule.Core.Interfaces.Repositories;
-using EventSchedule.Core.Interfaces.Services;
-using EventSchedule.Core.Interfaces.UnitOfWork;
 
-namespace EventSchedule.Core.Services
+namespace EventSchedule.Core
 {
     public class ServiceBase<TEntity> : IDisposable, IServiceBase<TEntity> where TEntity : class
     {

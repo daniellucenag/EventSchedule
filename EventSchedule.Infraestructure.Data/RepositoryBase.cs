@@ -3,10 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EventSchedule.Core.Interfaces.Repositories;
+using EventSchedule.Core;
 using EventSchedule.Infraestructure.Data.Context;
 
-namespace EventSchedule.Infraestructure.Data.Repositories
+namespace EventSchedule.Infraestructure.Data
 {
     public class RepositoryBase<TEntity> : IDisposable, IRepositoryBase<TEntity> where TEntity : class
     {

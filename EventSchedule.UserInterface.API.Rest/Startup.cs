@@ -1,13 +1,9 @@
 ﻿using AutoMapper;
 using EventSchedule.Application;
-using EventSchedule.Application.Interfaces;
-using EventSchedule.Core.Interfaces.Repositories;
-using EventSchedule.Core.Interfaces.Services;
-using EventSchedule.Core.Interfaces.UnitOfWork;
-using EventSchedule.Core.Services;
-using EventSchedule.Infraestructure.Data.Context;
-using EventSchedule.Infraestructure.Data.Repositories;
-using EventSchedule.Infraestructure.Data.UnitOfWork;
+using EventSchedule.Application.Event;
+using EventSchedule.Core.Event;
+using EventSchedule.Infraestructure.Data.Event;
+using EventSchedule.Infraestructure.Data;
 using EventSchedule.UserInterface.API.Rest.Event;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -15,6 +11,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
+using EventSchedule.Core;
+using EventSchedule.Infraestructure.Data.Context;
 
 namespace EventSchedule.UserInterface.API.Rest
 {

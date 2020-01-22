@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EventSchedule.Core.Entities
+namespace EventSchedule.Core.Event
 {
     public class Event
     {

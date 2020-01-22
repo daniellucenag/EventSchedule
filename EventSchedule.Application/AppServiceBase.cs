@@ -1,9 +1,6 @@
-﻿
-using EventSchedule.Application.Interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using EventSchedule.Core.Interfaces.Services;
+using EventSchedule.Core;
 
 namespace EventSchedule.Application
 {
