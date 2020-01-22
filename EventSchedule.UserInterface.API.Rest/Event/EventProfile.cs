@@ -6,7 +6,7 @@ namespace EventSchedule.UserInterface.API.Rest.Event
     {
         public EventProfile()
         {
-            CreateMap<Core.Entities.Event, EventViewModel>().ReverseMap();
+            CreateMap<Core.Event.Event, EventViewModel>().ReverseMap();
         }
     }
 }

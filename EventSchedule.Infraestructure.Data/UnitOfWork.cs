@@ -1,9 +1,9 @@
-﻿using EventSchedule.Core.Interfaces.UnitOfWork;
+﻿using EventSchedule.Core;
 using EventSchedule.Infraestructure.Data.Context;
 using System;
 using System.Threading.Tasks;
 
-namespace EventSchedule.Infraestructure.Data.UnitOfWork
+namespace EventSchedule.Infraestructure.Data
 {
     public class UnitOfWork : IUnitOfWork, IDisposable
     {

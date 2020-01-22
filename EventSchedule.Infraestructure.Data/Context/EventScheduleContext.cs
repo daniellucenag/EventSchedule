@@ -2,14 +2,13 @@
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using EventSchedule.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace EventSchedule.Infraestructure.Data.Context
 {
     public class EventScheduleContext : DbContext
     {
-        public DbSet<Event> Events { get; set; }
+        public DbSet<Core.Event.Event> Events { get; set; }
 
         private readonly string MysqlConnection =
             "Server=localhost; database=event_schedule; UID=root; password=root; Port=3308; SslMode=none";
@@ -61,6 +60,4 @@ namespace EventSchedule.Infraestructure.Data.Context
             return result;
         }
     }
-
-
 }

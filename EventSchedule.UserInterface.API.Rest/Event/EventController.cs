@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using AutoMapper;
-using EventSchedule.Application.Interfaces;
+using EventSchedule.Application.Event;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EventSchedule.UserInterface.API.Rest.Event
@@ -21,31 +21,31 @@ namespace EventSchedule.UserInterface.API.Rest.Event
         [HttpGet]
         public IEnumerable<EventViewModel> Get()
         {
-            return _mapper.Map<IEnumerable<Core.Entities.Event>, IEnumerable<EventViewModel>>(_eventApp.GetAll());
+            return _mapper.Map<IEnumerable<Core.Event.Event>, IEnumerable<EventViewModel>>((IEnumerable<Core.Event.Event>)_eventApp.GetAll());
         }
 
         [HttpGet("{id}")]
         public ActionResult<EventViewModel> Get(int id)
         {
-            return _mapper.Map<Core.Entities.Event, EventViewModel>(_eventApp.GetById(id));
+            return _mapper.Map<Core.Event.Event, EventViewModel>((Core.Event.Event)_eventApp.GetById(id));
         }
 
         [HttpPost]
         public void Post([FromBody] EventViewModel eventSchedule)
         {
-            _eventApp.Add(_mapper.Map<EventViewModel, Core.Entities.Event>(eventSchedule));
+            _eventApp.Add(_mapper.Map<EventViewModel, Core.Event.Event>(eventSchedule));
         }
 
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] EventViewModel eventSchedule)
         {
-           _eventApp.Update(_mapper.Map<EventViewModel, Core.Entities.Event>(eventSchedule));
+           _eventApp.Update(_mapper.Map<EventViewModel, Core.Event.Event>(eventSchedule));
         }
 
         [HttpDelete("{id}")]
         public void Delete(int id, [FromBody] EventViewModel eventSchedule)
         {
-            _eventApp.Remove(_mapper.Map<EventViewModel, Core.Entities.Event>(eventSchedule));
+            _eventApp.Remove(_mapper.Map<EventViewModel, Core.Event.Event>(eventSchedule));
         }
     }
 }

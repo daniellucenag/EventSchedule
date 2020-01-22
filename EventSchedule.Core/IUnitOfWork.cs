@@ -1,12 +1,10 @@
-﻿using EventSchedule.Core.Interfaces.Repositories;
-using System;
+﻿using System;
 using System.Threading.Tasks;
 
-namespace EventSchedule.Core.Interfaces.UnitOfWork
+namespace EventSchedule.Core
 {
     public interface IUnitOfWork : IDisposable
     {       
         Task SaveChangesAsync();      
-    }
-   
+    }   
 }
