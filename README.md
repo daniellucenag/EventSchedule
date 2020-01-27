@@ -12,12 +12,12 @@ Just me trying to understand better this architecture concept.
 
 # Database Creation (Mysql)
 
-CREATE DATABASE `event_schedule` /*!40100 DEFAULT CHARACTER SET utf8 */;
-CREATE TABLE `events` (
-  `EventId` varchar(10) NOT NULL,
-  `EventStart` datetime NOT NULL,
-  `EventEnd` datetime NOT NULL,
-  `Description` varchar(500) NOT NULL,
-  `CreatedAt` datetime NOT NULL,
-  PRIMARY KEY (`EventId`)
+CREATE DATABASE `event_schedule` /*!40100 DEFAULT CHARACTER SET utf8 */;</br>
+CREATE TABLE `events` (</br>
+  `EventId` varchar(10) NOT NULL,</br>
+  `EventStart` datetime NOT NULL,</br>
+  `EventEnd` datetime NOT NULL,</br>
+  `Description` varchar(500) NOT NULL,</br>
+  `CreatedAt` datetime NOT NULL,</br>
+  PRIMARY KEY (`EventId`)</br>
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
