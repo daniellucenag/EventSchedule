@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - UserInterface", "0 - UserInterface", "{BC0B37CD-D12F-4768-8123-60869BA901E2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserInterface", "UserInterface", "{BC0B37CD-D12F-4768-8123-60869BA901E2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{ADCDD2E4-D723-447A-907B-9BC2A35BBC84}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{ADCDD2E4-D723-447A-907B-9BC2A35BBC84}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Core", "2 - Core", "{C079ED76-F1F2-4B9D-AE19-5DBD28FC3D33}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{C079ED76-F1F2-4B9D-AE19-5DBD28FC3D33}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infraestructure", "3 - Infraestructure", "{182CA8D9-E4BE-4E2E-B000-EF09E864B3AE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infraestructure", "Infraestructure", "{182CA8D9-E4BE-4E2E-B000-EF09E864B3AE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{6B292E12-AFC9-4707-82A7-5DC124666F93}"
 EndProject
@@ -25,7 +25,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - Data", "4.1 - Data", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSchedule.Infraestructure.Data", "EventSchedule.Infraestructure.Data\EventSchedule.Infraestructure.Data.csproj", "{1E497543-D527-4149-BE1A-69BFFAEFDEA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSchedule.Application", "EventSchedule.Application\EventSchedule.Application.csproj", "{7FD65323-273E-4F3E-9E9F-529FEA2AE626}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventSchedule.Application", "EventSchedule.Application\EventSchedule.Application.csproj", "{7FD65323-273E-4F3E-9E9F-529FEA2AE626}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{145841B4-1DDC-4BC4-91EA-A2BF223C9A7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSchedule.Test", "EventSchedule.Test\EventSchedule.Test.csproj", "{77F7D394-2FD4-4AA2-9E13-7D10E73513AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +53,10 @@ Global
 		{7FD65323-273E-4F3E-9E9F-529FEA2AE626}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FD65323-273E-4F3E-9E9F-529FEA2AE626}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FD65323-273E-4F3E-9E9F-529FEA2AE626}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77F7D394-2FD4-4AA2-9E13-7D10E73513AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77F7D394-2FD4-4AA2-9E13-7D10E73513AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77F7D394-2FD4-4AA2-9E13-7D10E73513AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77F7D394-2FD4-4AA2-9E13-7D10E73513AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +70,7 @@ Global
 		{244C2C9F-56A4-4FA3-9865-FC8E1C396A1C} = {182CA8D9-E4BE-4E2E-B000-EF09E864B3AE}
 		{1E497543-D527-4149-BE1A-69BFFAEFDEA2} = {244C2C9F-56A4-4FA3-9865-FC8E1C396A1C}
 		{7FD65323-273E-4F3E-9E9F-529FEA2AE626} = {ADCDD2E4-D723-447A-907B-9BC2A35BBC84}
+		{77F7D394-2FD4-4AA2-9E13-7D10E73513AA} = {145841B4-1DDC-4BC4-91EA-A2BF223C9A7A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7CB7E57B-7C62-46C4-9C40-53841727B7C1}
