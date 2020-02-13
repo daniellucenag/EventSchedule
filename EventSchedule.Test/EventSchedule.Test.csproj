@@ -11,6 +11,17 @@
     <PackageReference Include="MSTest.TestAdapter" Version="2.0.0" />
     <PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
     <PackageReference Include="coverlet.collector" Version="1.0.1" />
+    <PackageReference Include="Moq" Version="4.13.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Application\" />
+    <Folder Include="Application\Event\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EventSchedule.Application\EventSchedule.Application.csproj" />
+    <ProjectReference Include="..\EventSchedule.Core\EventSchedule.Core.csproj" />
+    <ProjectReference Include="..\EventSchedule.Infraestructure.Data\EventSchedule.Infraestructure.Data.csproj" />
+    <ProjectReference Include="..\EventSchedule.UserInterface.API.Rest\EventSchedule.UserInterface.API.Rest.csproj" />
+  </ItemGroup>
 </Project>
